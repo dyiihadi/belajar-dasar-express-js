@@ -35,6 +35,16 @@ app.get("/blog/:category/:judul/:author", (req, res) => {
   );
 });
 
+app.get("/search", (req, res) => {
+  // console.log(req.query);
+
+  const { q } = req.query;
+  if (!q) {
+    res.send("<h1>tidak ada data yang dicari</h1>");
+  }
+  res.send(`<h1>Hasil pencarian dari ${q}</h1>`);
+});
+
 app.get("*", (req, res) => {
   res.send("halaman tidak ditemukan");
 });
