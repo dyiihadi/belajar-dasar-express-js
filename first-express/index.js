@@ -8,7 +8,7 @@ const app = express();
 // });
 
 app.get("/", (req, res) => {
-  res.send("this is home page");
+  res.send("Homepage");
 });
 
 app.get("/cats", (req, res) => {
