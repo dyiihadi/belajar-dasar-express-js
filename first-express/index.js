@@ -23,6 +23,18 @@ app.get("/about", (req, res) => {
   res.send("this is about page");
 });
 
+app.get("/blog/:judul", (req, res) => {
+  const { judul } = req.params;
+  res.send(`ini adalah blog dengan judul ${judul}`);
+});
+
+app.get("/blog/:category/:judul/:author", (req, res) => {
+  const { category, judul, author } = req.params;
+  res.send(
+    `ini adalah blog dengan category ${category}, judul ${judul}, dan author ${author}`
+  );
+});
+
 app.get("*", (req, res) => {
   res.send("halaman tidak ditemukan");
 });
